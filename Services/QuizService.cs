@@ -9,25 +9,29 @@ namespace Quiz
       return [.. questions
           .Select(q => q.Category)
           .Where(c => !string.IsNullOrEmpty(c))
-          .Select(cleanCategory)
+          .Select(CleanCategory)
           .Distinct()
           .OrderBy(c => c)];
     }
 
-    public List<Question> GetQuestionsForCategories(List<string> selectedCategories)
+    public List<Question> GetFilteredQuestions(List<string> selectedCategories, string selectedDifficulty)
     {
       var allQuestions = questionLoader.LoadQuestions();
+      IEnumerable<Question> filteredQuestions = allQuestions; 
 
-      if (selectedCategories.Contains("All"))
+      if (!selectedCategories.Contains("All"))
       {
-        return allQuestions;
+        filteredQuestions = filteredQuestions.Where(q => selectedCategories.Contains(CleanCategory(q.Category)));
       }
 
-      return [.. allQuestions
-            .Where(q => selectedCategories.Contains(cleanCategory(q.Category)))];
+      if (selectedDifficulty != "All")
+      {
+        filteredQuestions = filteredQuestions.Where(q => q.Difficulty.Equals(selectedDifficulty, StringComparison.OrdinalIgnoreCase));
+      }
+      return [.. filteredQuestions];
     }
 
-    private string cleanCategory(string category)
+    private string CleanCategory(string category)
     {
       if (string.IsNullOrEmpty(category)) return string.Empty;
 
