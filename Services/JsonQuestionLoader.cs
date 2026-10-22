@@ -1,16 +1,15 @@
 using System.Text.Json;
 
-namespace Quiz
+namespace Quiz;
+
+public class JsonQuestionLoader(string filePath) : IQuestionLoader
 {
-  public class JsonQuestionLoader(string filePath) : IQuestionLoader
+  public List<Question> LoadQuestions()
   {
-    public List<Question> LoadQuestions()
-    {
-      if (!File.Exists(filePath)) return [];
+    if (!File.Exists(filePath)) return [];
 
-      string jsonString = File.ReadAllText(filePath);
+    string jsonString = File.ReadAllText(filePath);
 
-      return JsonSerializer.Deserialize<List<Question>>(jsonString) ?? [];
-    }
+    return JsonSerializer.Deserialize<List<Question>>(jsonString) ?? [];
   }
 }

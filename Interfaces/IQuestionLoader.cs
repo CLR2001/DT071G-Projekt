@@ -1,7 +1,6 @@
-namespace Quiz
+namespace Quiz;
+
+public interface IQuestionLoader
 {
-  public interface IQuestionLoader
-  {
-    List<Question> LoadQuestions();
-  }
+  List<Question> LoadQuestions();
 }

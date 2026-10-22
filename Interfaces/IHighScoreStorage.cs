@@ -1,8 +1,7 @@
-namespace Quiz
+namespace Quiz;
+
+public interface IHighScoreStorage
 {
-  public interface IHighScoreStorage
-  {
-    List<HighScore> Load();
-    void Save(List<HighScore> highScores);
-  }
+  List<HighScore> Load();
+  void Save(List<HighScore> highScores);
 }
