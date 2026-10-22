@@ -11,4 +11,10 @@
     <PackageReference Include="Spectre.Console" Version="0.57.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="questions.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

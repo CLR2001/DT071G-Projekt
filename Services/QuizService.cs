@@ -28,7 +28,7 @@ public class QuizService(IQuestionLoader questionLoader)
     {
       filteredQuestions = filteredQuestions.Where(q => q.Difficulty.Equals(selectedDifficulty, StringComparison.OrdinalIgnoreCase));
     }
-    return [.. filteredQuestions];
+    return [.. filteredQuestions.Where(q => q.Type.Equals("multiple", StringComparison.OrdinalIgnoreCase))];
   }
 
   private string CleanCategory(string category)
