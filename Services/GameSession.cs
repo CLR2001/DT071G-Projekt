@@ -10,6 +10,8 @@ public class GameSession(QuizService quizService)
   public void Initialize(GameSettings settings)
   {
     _questions = quizService.GetFilteredQuestions(settings.SelectedCategories, settings.SelectedDifficulty);
+    _currentQuestion = 1;
+    _score = 0;
 
   }
 

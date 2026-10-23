@@ -1,3 +1,4 @@
+using System.Net;
 using System.Text.Json.Serialization;
 
 namespace Quiz;
@@ -27,6 +28,7 @@ public record Question
     var allAnswers = new List<string>(IncorrectAnswers);
     allAnswers.Add(CorrectAnswer);
 
-    return allAnswers.OrderBy(_ => Guid.NewGuid()).ToList();
+    var decodedAnswers = allAnswers.Select(answer => WebUtility.HtmlDecode(answer)).ToList();
+    return decodedAnswers.OrderBy(_ => Guid.NewGuid()).ToList();
   }
 }

@@ -19,46 +19,18 @@ do
   {
     case "start game":
       GameSettings gameSettings = SettingsScreen.Run(quizService);
-      gameSession.Initialize(gameSettings);
 
-      GameScreen.Run(gameSession);
-
-      int finalScore = gameSession.GetScore();
-      List<HighScore> currentHighScores = highScoreStorage.Load();
-
-      string confirmed = AnsiConsole.Prompt(
-       new SelectionPrompt<string>()
-       .Title($"Do you want to save your score? ({finalScore})")
-       .AddChoices([
-         "(Y) - Yes",
-         "(N) - No"])
-       .HighlightStyle(new Style(foreground: Color.Yellow)));
-
-      if (confirmed == "(Y) - Yes")
+      while (true)
       {
-        string playerName = AnsiConsole.Prompt(
-          new TextPrompt<string>("Enter your name: ")
-          .Validate(name =>
-          {
-            string trimmedName = name.Trim();
+        gameSession.Initialize(gameSettings);
 
-            if (trimmedName.Length < 3)
-            {
-              return ValidationResult.Error("[red]Your name must contain at least 3 symbols. Try again![/]");
-            }
+        GameResult result = GameScreen.Run(gameSession);
 
-            if (trimmedName.Length > 15)
-            {
-              return ValidationResult.Error("[red]Your name can't contain more than 15 symbols. Try again![/]");
-            }
+        PostGameScreen.SaveGame(gameSession.GetScore(), highScoreStorage, result);
 
-            return ValidationResult.Success();
-          })
-         );
+        bool playAgain = PostGameScreen.PlayAgain();
 
-        HighScore newHighScore = new(playerName, finalScore, DateOnly.FromDateTime(DateTime.Now));
-        currentHighScores.Append();
-        
+        if (!playAgain) break;
       }
       break;
 
@@ -67,14 +39,15 @@ do
       break;
 
     case "exit":
-      string confirmed = AnsiConsole.Prompt(
+      string confirmExit = AnsiConsole.Prompt(
         new SelectionPrompt<string>()
         .Title($"Are you sure you want to exit?")
         .AddChoices([
           "(Y) - Yes",
           "(N) - No"])
         .HighlightStyle(new Style(foreground: Color.Yellow)));
-      if (confirmed == "(Y) - Yes") running = false;
+
+      if (confirmExit == "(Y) - Yes") running = false;
       break;
   }
 
