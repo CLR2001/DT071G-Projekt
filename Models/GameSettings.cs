@@ -1,7 +1,7 @@
 namespace Quiz;
 
-public class GameSettings
+public record GameSettings
 {
-  public required List<string> SelectedCategories { get; set; }
-  public required string SelectedDifficulty { get; set; }
+  public required List<string> SelectedCategories { get; init; }
+  public required string SelectedDifficulty { get; init; }
 }
