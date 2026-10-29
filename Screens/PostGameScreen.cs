@@ -4,17 +4,31 @@ namespace Quiz;
 
 public class PostGameScreen()
 {
-  public static void SaveGame(int finalScore, IHighScoreStorage highScoreStorage, GameResult result)
+  public static void SaveGame(int finalScore, IHighScoreStorage highScoreStorage, GameSettings gameSettings, GameResult result)
   {
+    if (finalScore <= 0)
+    {
+      HeaderPanel.Draw("Game Over");
+      AnsiConsole.MarkupLine("[red]You got 0 points, so no highscore could be saved![/]");
+
+      Thread.Sleep(1500);
+      while (Console.KeyAvailable)
+      {
+        Console.ReadKey(intercept: true);
+      }
+
+      return;
+    }
+
     string message = string.Empty;
     if (result == GameResult.Completed)
     {
-      HeaderPanel.Draw("Game completed");
+      HeaderPanel.Draw("Game Completed");
       message = "You completed all questions";
     }
     else
     {
-      HeaderPanel.Draw("Game over");
+      HeaderPanel.Draw("Game Over");
       message = "Game Over!";
     }
 
@@ -50,7 +64,8 @@ public class PostGameScreen()
     {
       Name = playerName,
       Score = finalScore,
-      DateSubmitted = DateOnly.FromDateTime(DateTime.Now)
+      Date = DateOnly.FromDateTime(DateTime.Now),
+      Difficulty = gameSettings.SelectedDifficulty
     };
 
     highScores.Add(newHighScore);

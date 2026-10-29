@@ -1,0 +1,22 @@
+[
+  { "Name": "PixelPirate", "Score": 15, "Date": "2026-10-25", "Difficulty": "Hard" },
+  { "Name": "CodeNinja", "Score": 13, "Date": "2026-10-26", "Difficulty": "Medium" },
+  { "Name": "AstroCoder", "Score": 11, "Date": "2026-10-24", "Difficulty": "Hard" },
+  { "Name": "ByteMaster", "Score": 10, "Date": "2026-10-27", "Difficulty": "Medium" },
+  { "Name": "CSharpGuy", "Score": 9, "Date": "2026-10-22", "Difficulty": "Easy" },
+  { "Name": "LunaDev", "Score": 8, "Date": "2026-10-28", "Difficulty": "All" },
+  { "Name": "TokenTester", "Score": 7, "Date": "2026-10-21", "Difficulty": "Hard" },
+  { "Name": "NullPointer", "Score": 6, "Date": "2026-10-20", "Difficulty": "Medium" },
+  { "Name": "BugHunter", "Score": 6, "Date": "2026-10-25", "Difficulty": "Easy" },
+  { "Name": "StackOverflow", "Score": 5, "Date": "2026-10-19", "Difficulty": "All" },
+  { "Name": "QueryQueen", "Score": 5, "Date": "2026-10-23", "Difficulty": "Medium" },
+  { "Name": "SyntaxError", "Score": 4, "Date": "2026-10-18", "Difficulty": "Easy" },
+  { "Name": "LoopLover", "Score": 4, "Date": "2026-10-26", "Difficulty": "Hard" },
+  { "Name": "BetaTester", "Score": 3, "Date": "2026-10-17", "Difficulty": "Easy" },
+  { "Name": "DebugDave", "Score": 2, "Date": "2026-10-15", "Difficulty": "Medium" },
+  { "Name": "RookieCoder", "Score": 2, "Date": "2026-10-24", "Difficulty": "Easy" },
+  { "Name": "CrashTest", "Score": 1, "Date": "2026-10-14", "Difficulty": "All" },
+  { "Name": "GitCommit", "Score": 1, "Date": "2026-10-22", "Difficulty": "Easy" },
+  { "Name": "LostInCode", "Score": 1, "Date": "2026-10-12", "Difficulty": "Medium" },
+  { "Name": "OutOfMemory", "Score": 1, "Date": "2026-10-10", "Difficulty": "All" }
+]

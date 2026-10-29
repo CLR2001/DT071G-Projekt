@@ -8,7 +8,6 @@ public class GameScreen()
 {
   public static GameResult Run(GameSession gameSession)
   {
-    bool running = true;
     do
     {
       if (!gameSession.AnyQuestionsLeft())
@@ -34,13 +33,28 @@ public class GameScreen()
 
       bool correct = gameSession.SubmitAnswer(question, userAnswer);
 
-      if (!correct) 
+      if (correct)
       {
-        running = false;
-        return GameResult.GameOver;
-      } 
-    } while (running == true);
+        AnsiConsole.MarkupLine("[green]Correct![/]");
+      }
+      else
+      {
+        AnsiConsole.MarkupLine($"[red]Wrong! Correct answer was:[/] [green]{WebUtility.HtmlDecode(question.CorrectAnswer)}[/]");
 
-    return GameResult.Completed;
+        Thread.Sleep(1500);
+        while (Console.KeyAvailable)
+        {
+          Console.ReadKey(intercept: true);
+        }
+
+        return GameResult.GameOver;
+      }
+
+      Thread.Sleep(1000);
+      while (Console.KeyAvailable)
+      {
+        Console.ReadKey(intercept: true);
+      }
+    } while (true);
   }
 }

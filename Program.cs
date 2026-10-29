@@ -26,7 +26,7 @@ do
 
         GameResult result = GameScreen.Run(gameSession);
 
-        PostGameScreen.SaveGame(gameSession.GetScore(), highScoreStorage, result);
+        PostGameScreen.SaveGame(gameSession.GetScore(), highScoreStorage, gameSettings, result);
 
         bool playAgain = PostGameScreen.PlayAgain();
 
@@ -35,7 +35,7 @@ do
       break;
 
     case "high scores":
-      HighScoreScreen.Run();
+      HighScoreScreen.Run(highScoreStorage);
       break;
 
     case "exit":
