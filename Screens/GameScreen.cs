@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 namespace Quiz;
 
-public class GameScreen()
+public class GameScreen
 {
   public static GameResult Run(GameSession gameSession)
   {

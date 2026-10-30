@@ -2,7 +2,7 @@ using Spectre.Console;
 
 namespace Quiz;
 
-public class PostGameScreen()
+public class PostGameScreen
 {
   public static void SaveGame(int finalScore, IHighScoreStorage highScoreStorage, GameSettings gameSettings, GameResult result)
   {

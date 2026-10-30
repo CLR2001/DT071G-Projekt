@@ -2,7 +2,7 @@ using Spectre.Console;
 
 namespace Quiz;
 
-public class SettingsScreen()
+public class SettingsScreen
 {
   public static GameSettings Run(QuizService quizService)
   {
