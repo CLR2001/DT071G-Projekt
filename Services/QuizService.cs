@@ -1,3 +1,5 @@
+using System.Net;
+
 namespace Quiz;
 
 public class QuizService(IQuestionLoader questionLoader)
@@ -35,8 +37,10 @@ public class QuizService(IQuestionLoader questionLoader)
   {
     if (string.IsNullOrEmpty(category)) return string.Empty;
 
-    return category.Contains(':')
-        ? category.Split(':').Last().Trim()
-        : category.Trim();
+    return WebUtility.HtmlDecode(
+            category.Contains(':')
+            ? category.Split(':').Last().Trim()
+            : category.Trim()
+        );
   }
 }
