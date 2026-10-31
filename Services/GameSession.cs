@@ -1,3 +1,8 @@
+/*
+  GameSession.cs
+  Manages the state, score, and delivers questions to an active quiz game session.
+*/
+
 namespace Quiz;
 
 public class GameSession(QuizService quizService)

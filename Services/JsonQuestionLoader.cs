@@ -1,3 +1,8 @@
+/*
+  JsonQuestionLoader.cs
+  Loads quiz questions from a JSON file using System.Text.Json.
+*/
+
 using System.Text.Json;
 
 namespace Quiz;

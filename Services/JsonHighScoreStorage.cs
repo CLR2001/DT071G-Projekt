@@ -1,3 +1,8 @@
+/*
+  JsonHighScoreStorage.cs
+  Handles loading and saving high scores to a JSON file using System.Text.Json.
+*/
+
 using System.Text.Json;
 
 namespace Quiz;

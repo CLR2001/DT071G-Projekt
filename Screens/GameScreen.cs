@@ -1,6 +1,10 @@
+/*
+  GameScreen.cs
+  Manages the user interface and game loop for active quiz gameplay.
+*/
+
 using Spectre.Console;
 using System.Net;
-using System.Xml.Linq;
 
 namespace Quiz;
 

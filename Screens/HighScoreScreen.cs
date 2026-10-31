@@ -1,3 +1,8 @@
+/*
+  HighScoreScreen.cs
+  Handles the user interface for displaying paginated high scores in a formatted table.
+*/
+
 using Spectre.Console;
 
 namespace Quiz;

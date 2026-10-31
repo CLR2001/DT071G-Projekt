@@ -1,3 +1,8 @@
+/*
+  MenuScreen.cs
+  Handles the main menu user interface and navigation choices.
+*/
+
 using Spectre.Console;
 
 namespace Quiz;

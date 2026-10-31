@@ -1,3 +1,8 @@
+/*
+  SettingsScreen.cs
+  Handles the user interface for configuring game categories and difficulty settings.
+*/
+
 using Spectre.Console;
 
 namespace Quiz;

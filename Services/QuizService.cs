@@ -1,3 +1,8 @@
+/*
+  QuizService.cs
+  Handles logic, filtering, and loading of quiz questions.
+*/
+
 using System.Net;
 
 namespace Quiz;

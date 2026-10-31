@@ -1,3 +1,8 @@
+/*
+  PostGameScreen.cs
+  Handles the user interface and logic after a game session ends, including saving high scores and prompting to play again.
+*/
+
 using Spectre.Console;
 
 namespace Quiz;

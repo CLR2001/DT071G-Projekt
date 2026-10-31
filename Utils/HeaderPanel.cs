@@ -1,3 +1,8 @@
+/*
+  HeaderPanel.cs
+  Renders a header banner and title for use across all UI screens.
+*/
+
 using Spectre.Console;
 
 namespace Quiz;

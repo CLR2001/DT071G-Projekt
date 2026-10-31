@@ -1,4 +1,12 @@
-﻿using Quiz;
+﻿/*
+ * Developer: Ludvig Rosenqvist
+ * Course code: DT071G
+ * Task: Projektuppgift
+ * Date: 2026-11-01
+ * Description: A console application using Spectre.Console to create a user friendly and interactive console applicationfor a quiz game.
+ */
+
+using Quiz;
 using Spectre.Console;
 
 string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "questions.json");
