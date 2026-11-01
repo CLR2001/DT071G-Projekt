@@ -25,10 +25,11 @@ Denna konsolapplikation är byggd med fokus på god objektorienterad struktur, s
    ```
 
 ## ⬀ Länkar
-- [Rapport](/Ludvig%20Rosenqvist-DT071G-Projektuppgift.pdf)
+- [Rapport](/Ludvig-Rosenqvist-DT071G-Projektuppgift.pdf)
 - [Video demonstration](https://youtu.be/zagOafPVQcw)
 - [Flödesschema - Huvudloop](/gameLoop.png)
 - [Flödesschema - Spelloop](/mainLoop.png)
+- [Klassdiagram](/classDiagram.png)
 
 ## ⬢ Utvecklare
 **Ludvig Rosenqvist** — *Student*
